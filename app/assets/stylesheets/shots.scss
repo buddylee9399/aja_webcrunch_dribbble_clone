@@ -33,7 +33,10 @@
 	position: relative;
 	display: block;
 	color: #333 !important;
-
+	.shot-image {
+  	max-height: 200px;
+  	overflow: hidden;
+	}
 	.shot-data {
 		display: none;
 		position: absolute;

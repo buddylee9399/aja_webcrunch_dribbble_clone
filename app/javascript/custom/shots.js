@@ -1,19 +1,13 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-// import "custom/shots"
-
 // $('turbo:load', function() {
-// 	alert('am i still in here');
+// 	alert('im in shots');
 // });
 
-
-// $('turbo:load', function() {
-$(document).on('turbo:load', function() {
+$('turbo:load', function() {
 	var Shots = {
 		previewShot() {
 			if (window.File && window.FileList && window.FileReader) {
 
+				// alert('im in previewshots');
 				function handleFileSelect(evt) {
 					// alert('im in file select');
 					evt.stopPropagation();
@@ -73,20 +67,20 @@ $(document).on('turbo:load', function() {
 					// alert('yes dropzone');
 					dropZone.addEventListener('dragover', handleDragOver, false);
 
-					dropZone.addEventListener('drop', handleFileSelect, false);
+					// dropZone.addEventListener('drop', handleFileSelect, false);
 
-					dropZone.addEventListener('dragleave', (e) => {
-						dropZone.classList.remove('fire');
-					}, false);
+					// dropZone.addEventListener('dragleave', (e) => {
+					// 	dropZone.classList.remove('fire');
+					// }, false);
 
 					dropZone.addEventListener('drop', (e) => {
 						e.preventDefault();
-						// console.log(e);
+						console.log(e);
 						dropZone.classList.remove('fire');
 						fileInput.files = e.dataTransfer.files;
 						// if on shot/id/edit hide preview image on drop
 						if (previewImage) {
-							// alert('in preview image');
+							alert('in preview image');
 							previewImage.style.display = 'none';
 						}
 						// If on shots/new hide dropzone on drop

@@ -7,7 +7,9 @@
         <div class="shot-wrapper">
           
         <%= link_to shot, class: "shot" do %>
-          <%= image_tag(shot.user_shot) %>
+          <div class="shot-image">
+            <%= image_tag(shot.user_shot) if shot.user_shot.attached? %>
+          </div>
           <div class="shot-data">
             <h3 class="shot-title"><%= shot.title %></h3>
             <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>

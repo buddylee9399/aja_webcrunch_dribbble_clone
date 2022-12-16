@@ -566,4 +566,11 @@ end
 - update all the shot views
 - the like votes are button_to's
 
+## MAKING THE PREVIEW IN THE SHOTS FROM WORK WITH JAVASCRIPT
+- followed this to create a new js file:
+- https://stackoverflow.com/questions/70548841/how-to-add-custom-js-file-to-new-rails-7-project
+- i had to precompile assets, which creates the public/assets folder using: rails assets:precompile
+- then i had to uncompile them using: RAILS_ENV=development bundle exec rails assets:clobber
+- added the logic to app.js
+
 ## THE END
