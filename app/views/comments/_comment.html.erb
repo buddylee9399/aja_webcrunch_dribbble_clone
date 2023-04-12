@@ -15,8 +15,7 @@
       </div>
     </div>
     <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
-       <%= link_to 'Delete', [comment.shot, comment],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+       <%= link_to 'Delete', [comment.shot, comment], class: "button is-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
     <% end %>
   </article>
 </div>
